@@ -1,14 +1,14 @@
 import './App.css';
 import { Link } from 'react-router-dom';
 
-function App(props) {
+function ProfilePage(props) {
   const { username } = props;
   return (
     <div className="App">
-      <h1>{username}</h1>
-      <Link to="/ProfilePage">Profile Page</Link>
+      <h1>{username} profile</h1>
+      <Link to="/">Homepage</Link>
     </div>
   );
 }
 
-export default App;
+export default ProfilePage;
