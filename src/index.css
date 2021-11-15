@@ -127,6 +127,9 @@ code {
 
 .homeMainContainer {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 
 .leftHomeContainer {
@@ -196,4 +199,9 @@ code {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.rightHomeContainer {
+  width: 300px;
+  padding-top: 32px;
 }

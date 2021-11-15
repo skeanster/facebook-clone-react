@@ -2,6 +2,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import LeftHome from './components/LeftHome';
 import CenterHome from './components/CenterHome';
+import RightHome from './RightHome';
 
 function App(props) {
   const { username, posts } = props;
@@ -11,6 +12,7 @@ function App(props) {
       <div className="homeMainContainer">
         <LeftHome username={username} />
         <CenterHome username={username} posts={posts} />
+        <RightHome />
       </div>
     </div>
   );
