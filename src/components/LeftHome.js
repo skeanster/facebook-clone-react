@@ -15,7 +15,10 @@ function LeftHome(props) {
   return (
     <div className="leftHomeContainer">
       <ul className="leftHomeList">
-        <Link to="/ProfilePage" className="leftHomeListItem">
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="leftHomeListItem"
+        >
           <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           <div className="leftHomeText">{username}</div>
         </Link>

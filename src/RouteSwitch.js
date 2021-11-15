@@ -33,9 +33,12 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App username={state.username} />} />
         <Route
-          path="/ProfilePage"
+          path="/facebook-clone-react"
+          element={<App username={state.username} />}
+        />
+        <Route
+          path="/facebook-clone-react/ProfilePage"
           element={<ProfilePage username={state.username} />}
         />
       </Routes>

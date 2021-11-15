@@ -17,13 +17,17 @@ const Navbar = (props) => {
   return (
     <div className="navbarContainer">
       <div className="navbarLeftContainer">
-        <Link to="/" className="logo">
+        <Link to="/facebook-clone-react" className="logo">
           <LogoSvg />
         </Link>
         <Search />
       </div>
       <div className="navbarCenterContainer">
-        <Link to="/" className="navbarCenterIcons" id="home">
+        <Link
+          to="/facebook-clone-react"
+          className="navbarCenterIcons"
+          id="home"
+        >
           <HomeSvg />
         </Link>
         <div className="navbarCenterIcons" id="watch">
@@ -37,7 +41,10 @@ const Navbar = (props) => {
         </div>
       </div>
       <div className="navbarRightContainer">
-        <Link to="/ProfilePage" className="navbarProfileLink">
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="navbarProfileLink"
+        >
           <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           <div className="profileName">{username}</div>
         </Link>
