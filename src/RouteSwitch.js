@@ -9,6 +9,7 @@ const RouteSwitch = () => {
     posts: [
       {
         poster: 'Ryan Skeans',
+        post: 'this is Ryans post',
         likes: 3,
         comments: [
           {
@@ -19,7 +20,8 @@ const RouteSwitch = () => {
       },
       {
         poster: 'John Smith',
-        likes: 1,
+        post: 'this is Johns post',
+        likes: 2,
         comments: [
           {
             commenter: 'Ryan Skeans',
@@ -35,7 +37,7 @@ const RouteSwitch = () => {
       <Routes>
         <Route
           path="/facebook-clone-react"
-          element={<App username={state.username} />}
+          element={<App username={state.username} posts={state.posts} />}
         />
         <Route
           path="/facebook-clone-react/ProfilePage"

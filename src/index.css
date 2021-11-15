@@ -125,6 +125,10 @@ code {
   padding-right: 8px;
 }
 
+.homeMainContainer {
+  display: flex;
+}
+
 .leftHomeContainer {
   width: 300px;
 }
@@ -157,4 +161,39 @@ code {
 .leftHomeText {
   width: 100%;
   color: #1c1e21;
+}
+
+.centerHomeContainer {
+  display: flex;
+  width: 90%;
+  max-width: 680px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 20px;
+  padding: 32px;
+}
+
+.postContainer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.likeInfoContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.interactionsContainer {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
 }
