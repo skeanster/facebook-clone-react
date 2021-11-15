@@ -46,20 +46,20 @@ code {
   padding-bottom: 9px;
   border: none;
   border-radius: 25px;
-  background-color: rgb(240, 242, 245);
+  background-color: rgb(237, 240, 245);
 }
 
 .navbarCenterContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 20px;
   height: 80%;
+  gap: 12px;
 }
 
 .navbarCenterIcons {
   height: 100%;
-  width: 100px;
+  width: 120px;
   border-radius: 10px;
   display: flex;
   align-items: center;
