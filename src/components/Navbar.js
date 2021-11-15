@@ -9,6 +9,7 @@ import { ReactComponent as MessengerSvg } from './NavbarComponents/messenger.svg
 import { ReactComponent as NotificationsSvg } from './NavbarComponents/notifications.svg';
 import { ReactComponent as ArrowSvg } from './NavbarComponents/arrow.svg';
 import Search from './NavbarComponents/Search';
+import ProfilePic from './miscimages/default-profile.png';
 
 const Navbar = (props) => {
   const { username } = props;
@@ -37,7 +38,7 @@ const Navbar = (props) => {
       </div>
       <div className="navbarRightContainer">
         <Link to="/ProfilePage" className="navbarProfileLink">
-          <div className="profileImage">i</div>
+          <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           <div className="profileName">{username}</div>
         </Link>
         <div className="navbarRightLinks" id="navbarMenu">
