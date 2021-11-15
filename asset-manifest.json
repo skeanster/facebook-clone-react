@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/facebook-clone-react/static/css/main.0d4c38a5.chunk.css",
+    "main.js": "/facebook-clone-react/static/js/main.13274964.chunk.js",
+    "main.js.map": "/facebook-clone-react/static/js/main.13274964.chunk.js.map",
+    "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js",
+    "runtime-main.js.map": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js.map",
+    "static/js/2.7ae31e90.chunk.js": "/facebook-clone-react/static/js/2.7ae31e90.chunk.js",
+    "static/js/2.7ae31e90.chunk.js.map": "/facebook-clone-react/static/js/2.7ae31e90.chunk.js.map",
+    "static/js/3.b2c09300.chunk.js": "/facebook-clone-react/static/js/3.b2c09300.chunk.js",
+    "static/js/3.b2c09300.chunk.js.map": "/facebook-clone-react/static/js/3.b2c09300.chunk.js.map",
+    "index.html": "/facebook-clone-react/index.html",
+    "static/css/main.0d4c38a5.chunk.css.map": "/facebook-clone-react/static/css/main.0d4c38a5.chunk.css.map",
+    "static/js/2.7ae31e90.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.7ae31e90.chunk.js.LICENSE.txt",
+    "static/media/arrow.57cec4f6.svg": "/facebook-clone-react/static/media/arrow.57cec4f6.svg",
+    "static/media/default-profile.cb69260f.png": "/facebook-clone-react/static/media/default-profile.cb69260f.png",
+    "static/media/dots.8b2a1689.svg": "/facebook-clone-react/static/media/dots.8b2a1689.svg",
+    "static/media/gaming.0a03d36e.svg": "/facebook-clone-react/static/media/gaming.0a03d36e.svg",
+    "static/media/home.83577341.svg": "/facebook-clone-react/static/media/home.83577341.svg",
+    "static/media/logo.943170d6.svg": "/facebook-clone-react/static/media/logo.943170d6.svg",
+    "static/media/messenger.1ece700c.svg": "/facebook-clone-react/static/media/messenger.1ece700c.svg",
+    "static/media/notifications.1742859c.svg": "/facebook-clone-react/static/media/notifications.1742859c.svg",
+    "static/media/store.1c5fc9ad.svg": "/facebook-clone-react/static/media/store.1c5fc9ad.svg",
+    "static/media/watch.fd65c9ee.svg": "/facebook-clone-react/static/media/watch.fd65c9ee.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5649ba1e.js",
+    "static/js/2.7ae31e90.chunk.js",
+    "static/css/main.0d4c38a5.chunk.css",
+    "static/js/main.13274964.chunk.js"
+  ]
+}
