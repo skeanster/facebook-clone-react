@@ -37,6 +37,7 @@ const Search = () => {
         aria-expanded="false"
         aria-label="Search Facebook"
         role="combobox"
+        aria-controls=""
         placeholder="Search Facebook"
         autocomplete="off"
         spellcheck="false"
