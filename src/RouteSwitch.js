@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
-import ProfilePage from './ProfilePage';
+import ProfilePage from './components/ProfilePage';
 
 const RouteSwitch = () => {
   const [state, setState] = useState({

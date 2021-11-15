@@ -5,9 +5,76 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #1c1e21;
+  background-color: #f0f2f5;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.navbarContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: white;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  height: 56px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.navbarCenterContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  height: 80%;
+}
+
+.navbarCenterIcons {
+  height: 100%;
+  width: 100px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarCenterIcons:hover {
+  background-color: rgba(228, 228, 228, 0.671);
+}
+
+.navbarRightContainer {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbarLeftContainer {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 20px;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.navbarProfileLink {
+  display: flex;
+  gap: 5px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
 }
