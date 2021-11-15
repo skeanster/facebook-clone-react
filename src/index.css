@@ -122,4 +122,39 @@ code {
   width: 30px;
   padding-left: 5px;
   padding-bottom: 7px;
+  padding-right: 8px;
+}
+
+.leftHomeContainer {
+  width: 300px;
+}
+
+.leftHomeList {
+  padding-left: 16px;
+}
+
+.leftHomeListItem {
+  width: 100%;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.leftHomeListItem:hover {
+  background-color: rgba(228, 228, 228, 0.671);
+}
+
+.leftHomeImage {
+  width: 36px;
+  padding-left: 5px;
+  padding-bottom: 7px;
+  padding-right: 8px;
+}
+
+.leftHomeText {
+  width: 100%;
+  color: #1c1e21;
 }
