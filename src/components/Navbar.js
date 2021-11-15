@@ -4,6 +4,11 @@ import { ReactComponent as GamingSvg } from './NavbarComponents/gaming.svg';
 import { ReactComponent as HomeSvg } from './NavbarComponents/home.svg';
 import { ReactComponent as WatchSvg } from './NavbarComponents/watch.svg';
 import { ReactComponent as StoreSvg } from './NavbarComponents/store.svg';
+import { ReactComponent as DotsSvg } from './NavbarComponents/dots.svg';
+import { ReactComponent as MessengerSvg } from './NavbarComponents/messenger.svg';
+import { ReactComponent as NotificationsSvg } from './NavbarComponents/notifications.svg';
+import { ReactComponent as ArrowSvg } from './NavbarComponents/arrow.svg';
+import Search from './NavbarComponents/Search';
 
 const Navbar = (props) => {
   const { username } = props;
@@ -14,7 +19,7 @@ const Navbar = (props) => {
         <Link to="/" className="logo">
           <LogoSvg />
         </Link>
-        <div className="searchContainer">Search</div>
+        <Search />
       </div>
       <div className="navbarCenterContainer">
         <Link to="/" className="navbarCenterIcons" id="home">
@@ -36,16 +41,16 @@ const Navbar = (props) => {
           <div className="profileName">{username}</div>
         </Link>
         <div className="navbarRightLinks" id="navbarMenu">
-          M
+          <DotsSvg />
         </div>
         <div className="navbarRightLinks" id="navbarMessenger">
-          MS
+          <MessengerSvg />
         </div>
         <div className="navbarRightLinks" id="navbarNotifications">
-          N
+          <NotificationsSvg />
         </div>
         <div className="navbarRightLinks" id="navbarExpand">
-          \/
+          <ArrowSvg />
         </div>
       </div>
     </div>
