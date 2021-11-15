@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import { ReactComponent as LogoSvg } from './NavbarComponents/logo.svg';
+import { ReactComponent as GamingSvg } from './NavbarComponents/gaming.svg';
+import { ReactComponent as HomeSvg } from './NavbarComponents/home.svg';
+import { ReactComponent as WatchSvg } from './NavbarComponents/watch.svg';
+import { ReactComponent as StoreSvg } from './NavbarComponents/store.svg';
 
 const Navbar = (props) => {
   const { username } = props;
@@ -13,17 +17,17 @@ const Navbar = (props) => {
         <div className="searchContainer">Search</div>
       </div>
       <div className="navbarCenterContainer">
-        <div className="navbarCenterIcons" id="home">
-          Home
-        </div>
+        <Link to="/" className="navbarCenterIcons" id="home">
+          <HomeSvg />
+        </Link>
         <div className="navbarCenterIcons" id="watch">
-          Watch
+          <WatchSvg />
         </div>
         <div className="navbarCenterIcons" id="store">
-          Store
+          <StoreSvg />
         </div>
         <div className="navbarCenterIcons" id="gaming">
-          Gaming
+          <GamingSvg />
         </div>
       </div>
       <div className="navbarRightContainer">
