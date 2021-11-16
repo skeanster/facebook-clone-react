@@ -285,6 +285,7 @@ code {
   border-radius: 8px;
   width: 195px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .interactionButton:hover {
@@ -293,5 +294,53 @@ code {
 
 .rightHomeContainer {
   width: 300px;
-  padding-top: 32px;
+  padding-top: 16px;
+}
+
+.sponsoredContainer {
+  padding: 16px;
+  padding-left: 0;
+  border-bottom: 1px solid rgb(228, 230, 235);
+  font-weight: 600;
+}
+
+.contactsContainer {
+  margin-right: 25px;
+  padding-top: 16px;
+  border-bottom: 1px solid rgb(228, 230, 235);
+}
+
+.contactsHeader {
+  font-weight: 600;
+}
+
+.contactsList {
+  padding-left: 0;
+}
+
+.contactRight {
+  display: flex;
+  align-items: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contactRight:hover {
+  background-color: rgba(229, 226, 226, 0.692);
+}
+
+.contactName {
+  width: 100%;
+}
+
+.groupConvosHeader {
+  padding: 16px;
+  padding-left: 0;
+  font-weight: 600;
+}
+
+.newGroupText {
+  cursor: pointer;
 }
