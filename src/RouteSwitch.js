@@ -45,6 +45,18 @@ const RouteSwitch = () => {
         likes: 8,
         comments: [],
       },
+      {
+        poster: 'Party Thor',
+        post: 'Has anybody seen Jane?',
+        likes: 6,
+        comments: [],
+      },
+      {
+        poster: 'Wong',
+        post: 'It probably would have been a really fun wedding...',
+        likes: 2,
+        comments: [],
+      },
     ],
   });
 
