@@ -13,7 +13,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
 @media only screen and (max-width: 1150px) {
   .leftHomeContainer {
     display: none;
@@ -29,6 +28,11 @@ code {
 @media only screen and (max-width: 950px) {
   .rightHomeContainer {
     display: none;
+  }
+  .centerHomeContainer {
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

@@ -8,7 +8,7 @@ import { ReactComponent as LikeSvg } from './CenterHomeCompontents/like.svg';
 function CenterHome(props) {
   const { username, posts } = props;
   return (
-    <div className="centerHomeContainer">
+    <div className="centerHomeContainer" id="centerHomeContainer">
       <div className="newPostContainer">
         <div className="newPostMainContainer">
           <Link to="/facebook-clone-react/ProfilePage">
