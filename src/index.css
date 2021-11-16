@@ -21,7 +21,7 @@ code {
   flex-direction: row;
   flex-wrap: nowrap;
   background-color: white;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   height: 56px;
   padding-left: 16px;
   padding-right: 16px;
@@ -178,19 +178,55 @@ code {
 }
 
 .newPostContainer {
-  width: 100%;
   background-color: white;
   border-radius: 8px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  padding: 16px;
+  padding-bottom: 10px;
 }
 
 .newPostMainContainer {
   display: flex;
   align-items: center;
+  gap: 7px;
 }
 
 .mainNewPostButton {
   width: 100%;
+  padding: 12px;
+  width: 580px;
+  background-color: rgba(228, 228, 228, 0.671);
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.mainNewPostButton:hover {
+  background-color: #e7e7e7;
+}
+
+.postOptionsButtons {
+  display: flex;
+  padding-top: 8px;
+  margin-top: 12px;
+  border-top: 1px solid rgb(228, 230, 235);
+}
+
+.postOptionsText {
+  padding-left: 10px;
+}
+
+.postOptionButton {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.postOptionButton:hover {
+  background-color: rgba(240, 238, 238, 0.795);
 }
 
 .postContainer {
@@ -201,21 +237,58 @@ code {
   align-items: center;
   background-color: white;
   border-radius: 8px;
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.posterName {
+  width: calc(100% - 32px);
+  padding-top: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgb(228, 230, 235);
+}
+
+.postText {
+  width: calc(100% - 32px);
+  padding-bottom: 16px;
 }
 
 .likeInfoContainer {
-  width: 80%;
+  width: calc(100% - 32px);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgb(228, 230, 235);
+}
+
+.likeTotalContainer {
+  display: flex;
+}
+
+.likeTotal {
+  padding-left: 5px;
 }
 
 .interactionsContainer {
-  width: 80%;
+  width: calc(100% - 32px);
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  padding: 5px;
+  padding-top: 0;
+  text-align: center;
+}
+
+.interactionButton {
+  border-radius: 8px;
+  width: 195px;
+  padding: 10px;
+}
+
+.interactionButton:hover {
+  background-color: rgba(229, 226, 226, 0.692);
 }
 
 .rightHomeContainer {
