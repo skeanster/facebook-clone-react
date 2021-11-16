@@ -14,6 +14,33 @@ code {
     monospace;
 }
 
+@media only screen and (max-width: 1150px) {
+  .leftHomeContainer {
+    display: none;
+  }
+  .searchbar {
+    display: none;
+  }
+  #navbarProfileLink {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .rightHomeContainer {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 775px) {
+  #navbarCenterContainer {
+    display: none;
+  }
+  #feeling {
+    display: none;
+  }
+}
+
 .navbarContainer {
   display: flex;
   align-items: center;
@@ -59,7 +86,8 @@ code {
 
 .navbarCenterIcons {
   height: 100%;
-  width: 120px;
+  max-width: 120px;
+  width: calc(70px + 3vmax);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -181,14 +209,16 @@ code {
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding: 16px;
   padding-bottom: 10px;
+  width: 100%;
 }
 
 .newPostMainContainer {
   display: flex;
   align-items: center;
   gap: 7px;
+  padding: 16px;
+  padding-bottom: 0px;
 }
 
 .mainNewPostButton {

@@ -27,7 +27,7 @@ function CenterHome(props) {
             <PhotoSvg />
             <div className="postOptionsText">Photo/video</div>
           </div>
-          <div className="postOptionButton">
+          <div className="postOptionButton" id="feeling">
             <FeelingSvg />
             <div className="postOptionsText">Feeling/activity</div>
           </div>

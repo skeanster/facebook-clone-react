@@ -22,7 +22,7 @@ const Navbar = (props) => {
         </Link>
         <Search />
       </div>
-      <div className="navbarCenterContainer">
+      <div className="navbarCenterContainer" id="navbarCenterContainer">
         <Link
           to="/facebook-clone-react"
           className="navbarCenterIcons"
@@ -44,6 +44,7 @@ const Navbar = (props) => {
         <Link
           to="/facebook-clone-react/ProfilePage"
           className="navbarProfileLink"
+          id="navbarProfileLink"
         >
           <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           <div className="profileName">{username}</div>
