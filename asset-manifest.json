@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/facebook-clone-react/static/css/main.fab7bb7b.chunk.css",
+    "main.css": "/facebook-clone-react/static/css/main.1fdd6fc6.chunk.css",
     "main.js": "/facebook-clone-react/static/js/main.fc01e49c.chunk.js",
     "main.js.map": "/facebook-clone-react/static/js/main.fc01e49c.chunk.js.map",
     "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js",
@@ -10,7 +10,7 @@
     "static/js/3.b2c09300.chunk.js": "/facebook-clone-react/static/js/3.b2c09300.chunk.js",
     "static/js/3.b2c09300.chunk.js.map": "/facebook-clone-react/static/js/3.b2c09300.chunk.js.map",
     "index.html": "/facebook-clone-react/index.html",
-    "static/css/main.fab7bb7b.chunk.css.map": "/facebook-clone-react/static/css/main.fab7bb7b.chunk.css.map",
+    "static/css/main.1fdd6fc6.chunk.css.map": "/facebook-clone-react/static/css/main.1fdd6fc6.chunk.css.map",
     "static/js/2.6d84168c.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.6d84168c.chunk.js.LICENSE.txt",
     "static/media/arrow.57cec4f6.svg": "/facebook-clone-react/static/media/arrow.57cec4f6.svg",
     "static/media/default-profile.cb69260f.png": "/facebook-clone-react/static/media/default-profile.cb69260f.png",
@@ -30,7 +30,7 @@
   "entrypoints": [
     "static/js/runtime-main.5649ba1e.js",
     "static/js/2.6d84168c.chunk.js",
-    "static/css/main.fab7bb7b.chunk.css",
+    "static/css/main.1fdd6fc6.chunk.css",
     "static/js/main.fc01e49c.chunk.js"
   ]
 }
