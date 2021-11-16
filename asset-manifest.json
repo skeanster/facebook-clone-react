@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/facebook-clone-react/static/css/main.f4da52c2.chunk.css",
-    "main.js": "/facebook-clone-react/static/js/main.7c3903e7.chunk.js",
-    "main.js.map": "/facebook-clone-react/static/js/main.7c3903e7.chunk.js.map",
+    "main.css": "/facebook-clone-react/static/css/main.55f3767d.chunk.css",
+    "main.js": "/facebook-clone-react/static/js/main.17647cd5.chunk.js",
+    "main.js.map": "/facebook-clone-react/static/js/main.17647cd5.chunk.js.map",
     "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js",
     "runtime-main.js.map": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js.map",
     "static/js/2.6d84168c.chunk.js": "/facebook-clone-react/static/js/2.6d84168c.chunk.js",
@@ -10,23 +10,27 @@
     "static/js/3.b2c09300.chunk.js": "/facebook-clone-react/static/js/3.b2c09300.chunk.js",
     "static/js/3.b2c09300.chunk.js.map": "/facebook-clone-react/static/js/3.b2c09300.chunk.js.map",
     "index.html": "/facebook-clone-react/index.html",
-    "static/css/main.f4da52c2.chunk.css.map": "/facebook-clone-react/static/css/main.f4da52c2.chunk.css.map",
+    "static/css/main.55f3767d.chunk.css.map": "/facebook-clone-react/static/css/main.55f3767d.chunk.css.map",
     "static/js/2.6d84168c.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.6d84168c.chunk.js.LICENSE.txt",
     "static/media/arrow.57cec4f6.svg": "/facebook-clone-react/static/media/arrow.57cec4f6.svg",
     "static/media/default-profile.cb69260f.png": "/facebook-clone-react/static/media/default-profile.cb69260f.png",
     "static/media/dots.8b2a1689.svg": "/facebook-clone-react/static/media/dots.8b2a1689.svg",
+    "static/media/feeling.474c518e.svg": "/facebook-clone-react/static/media/feeling.474c518e.svg",
     "static/media/gaming.0a03d36e.svg": "/facebook-clone-react/static/media/gaming.0a03d36e.svg",
     "static/media/home.83577341.svg": "/facebook-clone-react/static/media/home.83577341.svg",
+    "static/media/like.b19c158a.svg": "/facebook-clone-react/static/media/like.b19c158a.svg",
     "static/media/logo.943170d6.svg": "/facebook-clone-react/static/media/logo.943170d6.svg",
     "static/media/messenger.1ece700c.svg": "/facebook-clone-react/static/media/messenger.1ece700c.svg",
     "static/media/notifications.1742859c.svg": "/facebook-clone-react/static/media/notifications.1742859c.svg",
+    "static/media/photo.50d94d7b.svg": "/facebook-clone-react/static/media/photo.50d94d7b.svg",
     "static/media/store.1c5fc9ad.svg": "/facebook-clone-react/static/media/store.1c5fc9ad.svg",
+    "static/media/video.d46e6ed0.svg": "/facebook-clone-react/static/media/video.d46e6ed0.svg",
     "static/media/watch.fd65c9ee.svg": "/facebook-clone-react/static/media/watch.fd65c9ee.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5649ba1e.js",
     "static/js/2.6d84168c.chunk.js",
-    "static/css/main.f4da52c2.chunk.css",
-    "static/js/main.7c3903e7.chunk.js"
+    "static/css/main.55f3767d.chunk.css",
+    "static/js/main.17647cd5.chunk.js"
   ]
 }
