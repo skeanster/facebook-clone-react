@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/facebook-clone-react/static/css/main.dadf8c84.chunk.css",
-    "main.js": "/facebook-clone-react/static/js/main.c00aaf7d.chunk.js",
-    "main.js.map": "/facebook-clone-react/static/js/main.c00aaf7d.chunk.js.map",
+    "main.css": "/facebook-clone-react/static/css/main.e306e487.chunk.css",
+    "main.js": "/facebook-clone-react/static/js/main.459d92de.chunk.js",
+    "main.js.map": "/facebook-clone-react/static/js/main.459d92de.chunk.js.map",
     "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.068e33db.js",
     "runtime-main.js.map": "/facebook-clone-react/static/js/runtime-main.068e33db.js.map",
-    "static/js/2.d980c75c.chunk.js": "/facebook-clone-react/static/js/2.d980c75c.chunk.js",
-    "static/js/2.d980c75c.chunk.js.map": "/facebook-clone-react/static/js/2.d980c75c.chunk.js.map",
+    "static/js/2.380671da.chunk.js": "/facebook-clone-react/static/js/2.380671da.chunk.js",
+    "static/js/2.380671da.chunk.js.map": "/facebook-clone-react/static/js/2.380671da.chunk.js.map",
     "static/js/3.a1ea5cfd.chunk.js": "/facebook-clone-react/static/js/3.a1ea5cfd.chunk.js",
     "static/js/3.a1ea5cfd.chunk.js.map": "/facebook-clone-react/static/js/3.a1ea5cfd.chunk.js.map",
     "index.html": "/facebook-clone-react/index.html",
-    "static/css/main.dadf8c84.chunk.css.map": "/facebook-clone-react/static/css/main.dadf8c84.chunk.css.map",
-    "static/js/2.d980c75c.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.d980c75c.chunk.js.LICENSE.txt",
+    "static/css/main.e306e487.chunk.css.map": "/facebook-clone-react/static/css/main.e306e487.chunk.css.map",
+    "static/js/2.380671da.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.380671da.chunk.js.LICENSE.txt",
     "static/media/arrow.57cec4f6.svg": "/facebook-clone-react/static/media/arrow.57cec4f6.svg",
     "static/media/default-profile.cb69260f.png": "/facebook-clone-react/static/media/default-profile.cb69260f.png",
     "static/media/dots.8b2a1689.svg": "/facebook-clone-react/static/media/dots.8b2a1689.svg",
@@ -28,8 +28,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.068e33db.js",
-    "static/js/2.d980c75c.chunk.js",
-    "static/css/main.dadf8c84.chunk.css",
-    "static/js/main.c00aaf7d.chunk.js"
+    "static/js/2.380671da.chunk.js",
+    "static/css/main.e306e487.chunk.css",
+    "static/js/main.459d92de.chunk.js"
   ]
 }
