@@ -10,6 +10,21 @@ function CenterHome(props) {
 
   const greeting = `What's on your mind, ${username}?`;
 
+  const commentButton = (e) => {
+    document
+      .getElementById(
+        e.target.parentNode.parentNode.childNodes[4].childNodes[0].childNodes[0]
+          .id
+      )
+      .focus();
+    document
+      .getElementById(
+        e.target.parentNode.parentNode.childNodes[4].childNodes[0].childNodes[0]
+          .id
+      )
+      .select();
+  };
+
   const comment = (e) => {
     newComment(e);
   };
@@ -99,12 +114,15 @@ function CenterHome(props) {
               >
                 Like
               </div>
-              <div className="interactionButton">Comment</div>
+              <div className="interactionButton" onClick={commentButton}>
+                Comment
+              </div>
               <div className="interactionButton">Share</div>
             </div>
             <div className="commentSectionContainer">
               <form onSubmit={comment}>
                 <input
+                  id={'comment' + post.id}
                   className="newCommentContainer"
                   placeholder="Write a comment..."
                   required
