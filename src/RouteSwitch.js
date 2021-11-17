@@ -122,7 +122,6 @@ const RouteSwitch = () => {
 
   const newComment = (e) => {
     e.preventDefault();
-    console.log(e.target.parentNode.parentNode.id);
     let postID = e.target.parentNode.parentNode.id;
     let itemExist = state.posts.find(({ id }) => id === postID);
     let indexOfItem = state.posts.indexOf(itemExist);
@@ -139,6 +138,16 @@ const RouteSwitch = () => {
     });
     e.target.childNodes[0].value = '';
     return;
+  };
+
+  const changeUsername = (e) => {
+    e.preventDefault();
+    // e.target.childNodes[0].value
+    setState({
+      username: e.target.childNodes[0].value,
+      posts: state.posts,
+    });
+    e.target.childNodes[0].value = '';
   };
 
   return (
@@ -158,7 +167,12 @@ const RouteSwitch = () => {
         />
         <Route
           path="/facebook-clone-react/ProfilePage"
-          element={<ProfilePage username={state.username} />}
+          element={
+            <ProfilePage
+              username={state.username}
+              changeUsername={changeUsername}
+            />
+          }
         />
       </Routes>
     </BrowserRouter>
