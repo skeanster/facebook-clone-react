@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/facebook-clone-react/static/css/main.837167aa.chunk.css",
-    "main.js": "/facebook-clone-react/static/js/main.4377b96f.chunk.js",
-    "main.js.map": "/facebook-clone-react/static/js/main.4377b96f.chunk.js.map",
-    "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js",
-    "runtime-main.js.map": "/facebook-clone-react/static/js/runtime-main.5649ba1e.js.map",
-    "static/js/2.6d84168c.chunk.js": "/facebook-clone-react/static/js/2.6d84168c.chunk.js",
-    "static/js/2.6d84168c.chunk.js.map": "/facebook-clone-react/static/js/2.6d84168c.chunk.js.map",
-    "static/js/3.b2c09300.chunk.js": "/facebook-clone-react/static/js/3.b2c09300.chunk.js",
-    "static/js/3.b2c09300.chunk.js.map": "/facebook-clone-react/static/js/3.b2c09300.chunk.js.map",
+    "main.css": "/facebook-clone-react/static/css/main.3f36090e.chunk.css",
+    "main.js": "/facebook-clone-react/static/js/main.2d3c45d7.chunk.js",
+    "main.js.map": "/facebook-clone-react/static/js/main.2d3c45d7.chunk.js.map",
+    "runtime-main.js": "/facebook-clone-react/static/js/runtime-main.068e33db.js",
+    "runtime-main.js.map": "/facebook-clone-react/static/js/runtime-main.068e33db.js.map",
+    "static/js/2.d980c75c.chunk.js": "/facebook-clone-react/static/js/2.d980c75c.chunk.js",
+    "static/js/2.d980c75c.chunk.js.map": "/facebook-clone-react/static/js/2.d980c75c.chunk.js.map",
+    "static/js/3.a1ea5cfd.chunk.js": "/facebook-clone-react/static/js/3.a1ea5cfd.chunk.js",
+    "static/js/3.a1ea5cfd.chunk.js.map": "/facebook-clone-react/static/js/3.a1ea5cfd.chunk.js.map",
     "index.html": "/facebook-clone-react/index.html",
-    "static/css/main.837167aa.chunk.css.map": "/facebook-clone-react/static/css/main.837167aa.chunk.css.map",
-    "static/js/2.6d84168c.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.6d84168c.chunk.js.LICENSE.txt",
+    "static/css/main.3f36090e.chunk.css.map": "/facebook-clone-react/static/css/main.3f36090e.chunk.css.map",
+    "static/js/2.d980c75c.chunk.js.LICENSE.txt": "/facebook-clone-react/static/js/2.d980c75c.chunk.js.LICENSE.txt",
     "static/media/arrow.57cec4f6.svg": "/facebook-clone-react/static/media/arrow.57cec4f6.svg",
     "static/media/default-profile.cb69260f.png": "/facebook-clone-react/static/media/default-profile.cb69260f.png",
     "static/media/dots.8b2a1689.svg": "/facebook-clone-react/static/media/dots.8b2a1689.svg",
     "static/media/feeling.474c518e.svg": "/facebook-clone-react/static/media/feeling.474c518e.svg",
     "static/media/gaming.0a03d36e.svg": "/facebook-clone-react/static/media/gaming.0a03d36e.svg",
     "static/media/home.83577341.svg": "/facebook-clone-react/static/media/home.83577341.svg",
-    "static/media/like.b19c158a.svg": "/facebook-clone-react/static/media/like.b19c158a.svg",
     "static/media/logo.943170d6.svg": "/facebook-clone-react/static/media/logo.943170d6.svg",
     "static/media/messenger.1ece700c.svg": "/facebook-clone-react/static/media/messenger.1ece700c.svg",
     "static/media/notifications.1742859c.svg": "/facebook-clone-react/static/media/notifications.1742859c.svg",
@@ -28,9 +27,9 @@
     "static/media/watch.fd65c9ee.svg": "/facebook-clone-react/static/media/watch.fd65c9ee.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.5649ba1e.js",
-    "static/js/2.6d84168c.chunk.js",
-    "static/css/main.837167aa.chunk.css",
-    "static/js/main.4377b96f.chunk.js"
+    "static/js/runtime-main.068e33db.js",
+    "static/js/2.d980c75c.chunk.js",
+    "static/css/main.3f36090e.chunk.css",
+    "static/js/main.2d3c45d7.chunk.js"
   ]
 }
