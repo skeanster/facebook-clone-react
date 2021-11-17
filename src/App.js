@@ -5,7 +5,7 @@ import CenterHome from './components/CenterHome';
 import RightHome from './components/RightHome';
 
 function App(props) {
-  const { username, posts, newPost, like } = props;
+  const { username, posts, newPost, like, newComment } = props;
   return (
     <div className="App">
       <Navbar username={username} />
@@ -16,6 +16,7 @@ function App(props) {
           posts={posts}
           newPost={newPost}
           like={like}
+          newComment={newComment}
         />
         <RightHome />
       </div>

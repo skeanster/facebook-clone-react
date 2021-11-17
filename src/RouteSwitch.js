@@ -29,7 +29,7 @@ const RouteSwitch = () => {
         comments: [
           {
             commenter: 'John Smith',
-            comment: 'Fantastic!',
+            comment: 'Fantastic! Looking good!',
           },
           {
             commenter: 'Jane Doe',
@@ -120,6 +120,27 @@ const RouteSwitch = () => {
     }
   };
 
+  const newComment = (e) => {
+    e.preventDefault();
+    console.log(e.target.parentNode.parentNode.id);
+    let postID = e.target.parentNode.parentNode.id;
+    let itemExist = state.posts.find(({ id }) => id === postID);
+    let indexOfItem = state.posts.indexOf(itemExist);
+    let tempArray = [...state.posts];
+    let tempItem = { ...tempArray[indexOfItem] };
+    tempItem.comments = tempItem.comments.concat({
+      commenter: state.username,
+      comment: e.target.childNodes[0].value,
+    });
+    tempArray[indexOfItem] = tempItem;
+    setState({
+      username: state.username,
+      posts: tempArray,
+    });
+    e.target.childNodes[0].value = '';
+    return;
+  };
+
   return (
     <BrowserRouter>
       <Routes>
@@ -131,6 +152,7 @@ const RouteSwitch = () => {
               posts={state.posts}
               newPost={newPost}
               like={like}
+              newComment={newComment}
             />
           }
         />

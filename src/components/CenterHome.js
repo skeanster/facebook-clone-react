@@ -3,11 +3,16 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as VideoSvg } from './CenterHomeCompontents/video.svg';
 import { ReactComponent as PhotoSvg } from './CenterHomeCompontents/photo.svg';
 import { ReactComponent as FeelingSvg } from './CenterHomeCompontents/feeling.svg';
+import uniqid from 'uniqid';
 
 function CenterHome(props) {
-  const { username, posts, newPost, like } = props;
+  const { username, posts, newPost, like, newComment } = props;
 
   const greeting = `What's on your mind, ${username}?`;
+
+  const comment = (e) => {
+    newComment(e);
+  };
 
   const activateOverlay = () => {
     document.querySelector('.overlay').classList.toggle('activeOverlay');
@@ -96,6 +101,25 @@ function CenterHome(props) {
               </div>
               <div className="interactionButton">Comment</div>
               <div className="interactionButton">Share</div>
+            </div>
+            <div className="commentSectionContainer">
+              <form onSubmit={comment}>
+                <input
+                  className="newCommentContainer"
+                  placeholder="Write a comment..."
+                  required
+                ></input>
+              </form>
+              <div className="commentsContainer">
+                {post.comments.map((comment) => {
+                  return (
+                    <div className="singleComment" key={uniqid()}>
+                      <div className="commenter">{comment.commenter}</div>
+                      <div className="comment">{comment.comment}</div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
         );
