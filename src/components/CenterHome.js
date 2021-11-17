@@ -14,8 +14,9 @@ function CenterHome(props) {
     document.querySelector('.formContainer').classList.toggle('hide');
   };
 
-  const newPostSubmit = () => {
-    newPost(document.querySelector('#postInput').value);
+  const newPostSubmit = (e) => {
+    //newPost(document.querySelector('#postInput').value);
+    newPost(e);
     document.querySelector('.overlay').classList.toggle('activeOverlay');
     document.querySelector('.formContainer').classList.toggle('hide');
   };
@@ -24,22 +25,18 @@ function CenterHome(props) {
     <div className="centerHomeContainer" id="centerHomeContainer">
       <div className="overlay" onClick={activateOverlay}></div>
       <div className="formContainer hide">
-        <form name="newPost">
-          <input
+        <form name="newPost" onSubmit={newPostSubmit}>
+          <textarea
             autoComplete="off"
             type="text"
             id="postInput"
             name="postInput"
             defaultValue=""
             placeholder={greeting}
+            required
           />
           <br />
-          <input
-            type="button"
-            value="Submit"
-            id="taskSubmit"
-            onClick={newPostSubmit}
-          />
+          <input type="submit" value="Post" id="postSubmit" />
         </form>
       </div>
       <div className="newPostContainer">
@@ -90,7 +87,11 @@ function CenterHome(props) {
               </div>
             </div>
             <div className="interactionsContainer">
-              <div className="interactionButton" onClick={like}>
+              <div
+                className="interactionButton"
+                onClick={like}
+                id={'liked' + post.liked}
+              >
                 Like
               </div>
               <div className="interactionButton">Comment</div>

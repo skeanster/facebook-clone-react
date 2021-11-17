@@ -73,20 +73,22 @@ const RouteSwitch = () => {
     ],
   });
 
-  const newPost = (content) => {
+  const newPost = (e) => {
+    e.preventDefault();
     setState({
       username: state.username,
       posts: [
         {
           id: uniqid(),
           poster: state.username,
-          post: content,
+          post: e.target.childNodes[0].value,
           likes: 0,
           comments: [],
           liked: false,
         },
       ].concat(state.posts),
     });
+    e.target.childNodes[0].value = '';
   };
 
   const like = (like) => {
