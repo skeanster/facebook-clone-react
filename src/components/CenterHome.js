@@ -123,6 +123,7 @@ function CenterHome(props) {
               <form onSubmit={comment}>
                 <input
                   id={'comment' + post.id}
+                  autoComplete="off"
                   className="newCommentContainer"
                   placeholder="Write a comment..."
                   required
