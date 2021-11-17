@@ -3,31 +3,68 @@ import { Link } from 'react-router-dom';
 import { ReactComponent as VideoSvg } from './CenterHomeCompontents/video.svg';
 import { ReactComponent as PhotoSvg } from './CenterHomeCompontents/photo.svg';
 import { ReactComponent as FeelingSvg } from './CenterHomeCompontents/feeling.svg';
-import { ReactComponent as LikeSvg } from './CenterHomeCompontents/like.svg';
 
 function CenterHome(props) {
-  const { username, posts } = props;
+  const { username, posts, newPost, like } = props;
+
+  const greeting = `What's on your mind, ${username}?`;
+
+  const activateOverlay = () => {
+    document.querySelector('.overlay').classList.toggle('activeOverlay');
+    document.querySelector('.formContainer').classList.toggle('hide');
+  };
+
+  const newPostSubmit = () => {
+    newPost(document.querySelector('#postInput').value);
+    document.querySelector('.overlay').classList.toggle('activeOverlay');
+    document.querySelector('.formContainer').classList.toggle('hide');
+  };
+
   return (
     <div className="centerHomeContainer" id="centerHomeContainer">
+      <div className="overlay" onClick={activateOverlay}></div>
+      <div className="formContainer hide">
+        <form name="newPost">
+          <input
+            autoComplete="off"
+            type="text"
+            id="postInput"
+            name="postInput"
+            defaultValue=""
+            placeholder={greeting}
+          />
+          <br />
+          <input
+            type="button"
+            value="Submit"
+            id="taskSubmit"
+            onClick={newPostSubmit}
+          />
+        </form>
+      </div>
       <div className="newPostContainer">
         <div className="newPostMainContainer">
           <Link to="/facebook-clone-react/ProfilePage">
             <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           </Link>
-          <div className="mainNewPostButton">
-            What's on your mind, {username}?
+          <div className="mainNewPostButton" onClick={activateOverlay}>
+            {greeting}
           </div>
         </div>
         <div className="postOptionsButtons">
-          <div className="postOptionButton">
+          <div className="postOptionButton" onClick={activateOverlay}>
             <VideoSvg />
             <div className="postOptionsText">Live Video</div>
           </div>
-          <div className="postOptionButton">
+          <div className="postOptionButton" onClick={activateOverlay}>
             <PhotoSvg />
             <div className="postOptionsText">Photo/video</div>
           </div>
-          <div className="postOptionButton" id="feeling">
+          <div
+            className="postOptionButton"
+            id="feeling"
+            onClick={activateOverlay}
+          >
             <FeelingSvg />
             <div className="postOptionsText">Feeling/activity</div>
           </div>
@@ -35,7 +72,7 @@ function CenterHome(props) {
       </div>
       {posts.map((post) => {
         return (
-          <div className="postContainer" key={post.poster + post.post}>
+          <div className="postContainer" key={post.id} id={post.id}>
             <div className="posterName">{post.poster}</div>
             <div className="postText">{post.post}</div>
             <div className="likeInfoContainer">
@@ -53,7 +90,9 @@ function CenterHome(props) {
               </div>
             </div>
             <div className="interactionsContainer">
-              <div className="interactionButton">Like</div>
+              <div className="interactionButton" onClick={like}>
+                Like
+              </div>
               <div className="interactionButton">Comment</div>
               <div className="interactionButton">Share</div>
             </div>

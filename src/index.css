@@ -13,6 +13,44 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.overlay {
+  z-index: 9;
+  position: fixed;
+  opacity: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background-color: red;
+}
+
+.activeOverlay {
+  opacity: 0.5;
+  pointer-events: all;
+}
+
+.hide {
+  display: none;
+}
+
+.formContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  z-index: 15;
+  width: 90%;
+  max-width: 515px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  animation: 0.3s ease 0s 1 normal none running fadeIn;
+}
+
 @media only screen and (max-width: 1310px) {
   .leftHomeContainer {
     display: none;
