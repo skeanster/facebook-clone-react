@@ -194,10 +194,14 @@ const RouteSwitch = () => {
         <Route
           path="/facebook-clone-react/ProfilePage"
           element={
-            <ProfilePage
-              username={state.username}
-              changeUsername={changeUsername}
-            />
+            user ? (
+              <ProfilePage
+                username={state.username}
+                changeUsername={changeUsername}
+              />
+            ) : (
+              <LogIn />
+            )
           }
         />
         <Route path="/facebook-clone-react/LogIn" element={<LogIn />} />

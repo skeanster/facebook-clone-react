@@ -1,4 +1,5 @@
 import Navbar from './Navbar';
+import LogoutButton from './LogoutButton';
 
 function ProfilePage(props) {
   const { username, changeUsername } = props;
@@ -17,8 +18,9 @@ function ProfilePage(props) {
             required
           />
           <br />
-          <input type="submit" value="Post" id="postSubmit" />
+          <input type="submit" value="Change Username" id="postSubmit" />
         </form>
+        <LogoutButton />
       </div>
     </div>
   );

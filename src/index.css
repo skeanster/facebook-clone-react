@@ -59,11 +59,14 @@ code {
   font-size: 24px;
   font-weight: 400;
   overflow-wrap: break-word;
-  width: 100%;
-  max-width: 450px;
-  height: 150px;
+  width: calc(100% - 22px);
+  max-width: 446px;
+  height: 75px;
   white-space: pre-wrap;
   padding: 9px;
+  border: 2px solid #1877f2;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 8px;
 }
 
 #postSubmit {
@@ -73,11 +76,14 @@ code {
   width: 100%;
   max-width: 468px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
   font-size: 15px;
   font-weight: 600;
   padding: 9px;
   cursor: pointer;
+  border: 2px solid #1877f2;
 }
 
 @media only screen and (max-width: 1310px) {
@@ -513,4 +519,23 @@ code {
 
 .newGroupText {
   cursor: pointer;
+}
+
+.signOut {
+  background: white;
+  z-index: 15;
+  width: 100%;
+  padding: 9px;
+  margin-top: 15px;
+  border-radius: 10px;
+  animation: 0.3s ease 0s 1 normal none running fadeIn;
+  border: 2px solid #1877f2;
+  color: #1877f2;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.signOut:hover {
+  background-color: #1877f2;
+  color: white;
 }
