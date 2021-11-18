@@ -2,7 +2,27 @@ import React, { useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import ProfilePage from './components/ProfilePage';
+import LogIn from './components/LogIn';
 import uniqid from 'uniqid';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/firestore';
+import 'firebase/compat/auth';
+import 'firebase/compat/analytics';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useCollectionData } from 'react-firebase-hooks/firestore';
+
+firebase.initializeApp({
+  apiKey: 'AIzaSyCwZKvNHtNsjNO_aeXCdeFeXn4-YOM1xw8',
+  authDomain: 'facebook-clone-a72c0.firebaseapp.com',
+  projectId: 'facebook-clone-a72c0',
+  storageBucket: 'facebook-clone-a72c0.appspot.com',
+  messagingSenderId: '964855994482',
+  appId: '1:964855994482:web:e93ffafcc1bc961c524aeb',
+  measurementId: 'G-2DNZTHXNZ1',
+});
+
+const auth = firebase.auth();
+const firestore = firebase.firestore();
 
 const RouteSwitch = () => {
   const [state, setState] = useState({
@@ -150,19 +170,25 @@ const RouteSwitch = () => {
     e.target.childNodes[0].value = '';
   };
 
+  const [user] = useAuthState(auth);
+
   return (
     <BrowserRouter>
       <Routes>
         <Route
           path="/facebook-clone-react"
           element={
-            <App
-              username={state.username}
-              posts={state.posts}
-              newPost={newPost}
-              like={like}
-              newComment={newComment}
-            />
+            user ? (
+              <App
+                username={state.username}
+                posts={state.posts}
+                newPost={newPost}
+                like={like}
+                newComment={newComment}
+              />
+            ) : (
+              <LogIn />
+            )
           }
         />
         <Route
@@ -174,6 +200,7 @@ const RouteSwitch = () => {
             />
           }
         />
+        <Route path="/facebook-clone-react/LogIn" element={<LogIn />} />
       </Routes>
     </BrowserRouter>
   );
