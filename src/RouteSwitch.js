@@ -6,23 +6,24 @@ import LogIn from './components/LogIn';
 import {
   auth,
   firebase,
-  firestore,
   postsRef,
   query,
   useAuthState,
   useCollectionData,
   arrayUnion,
-  arrayRemove,
   uniqid,
-  firebaseConfig,
 } from './components/Firebase';
 
 const RouteSwitch = () => {
-  const [state, setState] = useState();
+  const [state, setState] = useState('Anonymous');
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      setState(user.displayName);
+      if (user.displayName !== null) {
+        setState(user.displayName);
+      } else {
+        setState('Anonymous');
+      }
     });
   }, []);
 

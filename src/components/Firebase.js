@@ -6,7 +6,7 @@ import 'firebase/compat/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { arrayUnion, arrayRemove } from 'firebase/firestore';
-import { onAuthStateChanged } from 'firebase/auth';
+import { signInAnonymously } from 'firebase/auth';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCwZKvNHtNsjNO_aeXCdeFeXn4-YOM1xw8',
@@ -31,7 +31,6 @@ const firebaseConfig = {
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const postsRef = firestore.collection('posts');
-const usersRef = firestore.collection('users');
 const query = postsRef.limit(25);
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
@@ -53,7 +52,16 @@ const signInWithGoogle = async () => {
   }
 };
 
+const guestSignIn = async () => {
+  await signInAnonymously(auth).then(() => {
+    auth.currentUser.updateProfile({
+      displayName: 'Anonymous',
+    });
+  });
+};
+
 export {
+  guestSignIn,
   auth,
   firebase,
   firestore,

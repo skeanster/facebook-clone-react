@@ -1,4 +1,5 @@
 import { signInWithGoogle } from './Firebase';
+import { guestSignIn } from './Firebase';
 
 function LogIn() {
   return (
@@ -10,6 +11,9 @@ function LogIn() {
       />
       <button className="sign-in" onClick={signInWithGoogle}>
         Log In with Google
+      </button>
+      <button className="sign-in" onClick={guestSignIn}>
+        Use Guest Account
       </button>
       <div className="login-links">
         {' '}
