@@ -2,14 +2,34 @@ import { signInWithGoogle } from './Firebase';
 
 function LogIn() {
   return (
-    <>
+    <div className="loginContainer">
+      <img
+        src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+        className="loginLogo"
+        alt="facebook"
+      />
       <button className="sign-in" onClick={signInWithGoogle}>
-        Sign in with Google
+        Log In with Google
       </button>
-      <p>
-        Do not violate the community guidelines or you will be banned for life!
-      </p>
-    </>
+      <div className="login-links">
+        {' '}
+        <a href="https://github.com/skeanster" target="_blank" rel="noreferrer">
+          Github
+        </a>{' '}
+        -{' '}
+        <a
+          href="https://www.linkedin.com/in/ryanskeans/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          LinkedIn
+        </a>{' '}
+        -{' '}
+        <a href="https://skeanster.github.io/" target="_blank" rel="noreferrer">
+          Ryan Inc.
+        </a>
+      </div>
+    </div>
   );
 }
 

@@ -1,4 +1,3 @@
-import './App.css';
 import Navbar from './components/Navbar';
 import LeftHome from './components/LeftHome';
 import CenterHome from './components/CenterHome';
