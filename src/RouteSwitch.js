@@ -10,6 +10,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { arrayUnion, arrayRemove } from 'firebase/firestore';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCwZKvNHtNsjNO_aeXCdeFeXn4-YOM1xw8',
@@ -93,76 +94,134 @@ const RouteSwitch = () => {
     ],
   });
 
-  const newPost = (e) => {
+  const newPost = async (e) => {
     e.preventDefault();
-    setState({
-      username: state.username,
-      posts: [
-        {
-          id: uniqid(),
-          poster: state.username,
-          post: e.target.childNodes[0].value,
-          likes: 0,
-          comments: [],
-          liked: false,
-        },
-      ].concat(state.posts),
+    let documentId = uniqid();
+    await testRef.doc(documentId).set({
+      id: documentId,
+      poster: state.username,
+      post: e.target.childNodes[0].value,
+      likes: 0,
+      comments: [],
+      liked: false,
     });
+
+    // setState({
+    //   username: state.username,
+    //   posts: [
+    //     {
+    //       id: uniqid(),
+    //       poster: state.username,
+    //       post: e.target.childNodes[0].value,
+    //       likes: 0,
+    //       comments: [],
+    //       liked: false,
+    //     },
+    //   ].concat(state.posts),
+    // });
     e.target.childNodes[0].value = '';
   };
 
-  const like = (like) => {
-    let postID = like.target.parentNode.parentNode.id;
-    let itemExist = state.posts.find(({ id }) => id === postID);
-    let indexOfItem = state.posts.indexOf(itemExist);
-    let tempArray = [...state.posts];
-    let tempItem = { ...tempArray[indexOfItem] };
-    const postInQuestion = tempItem;
-
-    if (postInQuestion.liked === false) {
-      tempItem.liked = true;
-      tempItem.likes = tempItem.likes + 1;
-      tempArray[indexOfItem] = tempItem;
-      setState({
-        username: state.username,
-        posts: tempArray,
+  const like = async (like) => {
+    let currentDoc = await testRef.doc(like.target.parentNode.parentNode.id);
+    if (
+      await (await currentDoc.get())
+        .data()
+        .likes.find((element) => element === user.uid)
+    ) {
+      await currentDoc.update({
+        likes: firebase.firestore.FieldValue.arrayRemove(user.uid),
       });
-      return;
     } else {
-      tempItem.liked = false;
-      tempItem.likes = tempItem.likes - 1;
-      tempArray[indexOfItem] = tempItem;
-      setState({
-        username: state.username,
-        posts: tempArray,
+      await currentDoc.update({
+        likes: arrayUnion(user.uid),
       });
-      return;
     }
+
+    //if ((await currentDoc.get()).data().liked === false) {
+    //  await currentDoc.update({
+    //    liked: true,
+    //  });
+    //  await currentDoc.update({
+    //    likes: firebase.firestore.FieldValue.increment(1),
+    //  });
+    //  return;
+    //} else {
+    //  await currentDoc.update({
+    //    liked: false,
+    //  });
+    //  await currentDoc.update({
+    //    likes: firebase.firestore.FieldValue.increment(-1),
+    //  });
+    //}
+
+    //let postID = like.target.parentNode.parentNode.id;
+    //let itemExist = state.posts.find(({ id }) => id === postID);
+    //let indexOfItem = state.posts.indexOf(itemExist);
+    //let tempArray = [...state.posts];
+    //let tempItem = { ...tempArray[indexOfItem] };
+    //const postInQuestion = tempItem;
+    //
+    //if (postInQuestion.liked === false) {
+    //  tempItem.liked = true;
+    //  tempItem.likes = tempItem.likes + 1;
+    //  tempArray[indexOfItem] = tempItem;
+    //  setState({
+    //    username: state.username,
+    //    posts: tempArray,
+    //  });
+    //  return;
+    //} else {
+    //  tempItem.liked = false;
+    //  tempItem.likes = tempItem.likes - 1;
+    //  tempArray[indexOfItem] = tempItem;
+    //  setState({
+    //    username: state.username,
+    //    posts: tempArray,
+    //  });
+    //  return;
+    //}
   };
 
-  const newComment = (e) => {
+  const newComment = async (e) => {
     e.preventDefault();
-    let postID = e.target.parentNode.parentNode.id;
-    let itemExist = state.posts.find(({ id }) => id === postID);
-    let indexOfItem = state.posts.indexOf(itemExist);
-    let tempArray = [...state.posts];
-    let tempItem = { ...tempArray[indexOfItem] };
-    tempItem.comments = tempItem.comments.concat({
-      commenter: state.username,
-      comment: e.target.childNodes[0].value,
+    let currentDoc = await testRef.doc(e.target.parentNode.parentNode.id);
+    //await currentDoc.update({
+    //  id: e.target.parentNode.parentNode.id,
+    //  liked: true,
+    //  likes: 6,
+    //  post: 'worked',
+    //  poster: 'really worked',
+    //  comments: [],
+    //});
+
+    await currentDoc.update({
+      comments: arrayUnion({
+        commenter: state.username,
+        comment: e.target.childNodes[0].value,
+      }),
     });
-    tempArray[indexOfItem] = tempItem;
-    setState({
-      username: state.username,
-      posts: tempArray,
-    });
+
+    // let postID = e.target.parentNode.parentNode.id;
+    // let itemExist = state.posts.find(({ id }) => id === postID);
+    // let indexOfItem = state.posts.indexOf(itemExist);
+    // let tempArray = [...state.posts];
+    // let tempItem = { ...tempArray[indexOfItem] };
+    // tempItem.comments = tempItem.comments.concat({
+    //   commenter: state.username,
+    //   comment: e.target.childNodes[0].value,
+    // });
+    // tempArray[indexOfItem] = tempItem;
+    // setState({
+    //   username: state.username,
+    //   posts: tempArray,
+    // });
     e.target.childNodes[0].value = '';
     return;
   };
 
   const changeUsername = (e) => {
     e.preventDefault();
-    // e.target.childNodes[0].value
     setState({
       username: e.target.childNodes[0].value,
       posts: state.posts,
@@ -171,6 +230,10 @@ const RouteSwitch = () => {
   };
 
   const [user] = useAuthState(auth);
+
+  const testRef = firestore.collection('posts');
+  const query = testRef.limit(25);
+  const [tests] = useCollectionData(query);
 
   return (
     <BrowserRouter>
@@ -181,7 +244,7 @@ const RouteSwitch = () => {
             user ? (
               <App
                 username={state.username}
-                posts={state.posts}
+                posts={tests}
                 newPost={newPost}
                 like={like}
                 newComment={newComment}
