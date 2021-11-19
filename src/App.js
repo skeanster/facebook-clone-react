@@ -3,10 +3,10 @@ import Navbar from './components/Navbar';
 import LeftHome from './components/LeftHome';
 import CenterHome from './components/CenterHome';
 import RightHome from './components/RightHome';
-import LogIn from './components/LogIn';
 
 function App(props) {
   const { username, posts, newPost, like, newComment, checkLike } = props;
+
   return (
     <div className="App">
       <Navbar username={username} />

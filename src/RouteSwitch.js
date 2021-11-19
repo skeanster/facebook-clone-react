@@ -1,42 +1,40 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App';
 import ProfilePage from './components/ProfilePage';
 import LogIn from './components/LogIn';
-import uniqid from 'uniqid';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-import 'firebase/compat/auth';
-import 'firebase/compat/analytics';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { arrayUnion, arrayRemove } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
-
-firebase.initializeApp({
-  apiKey: 'AIzaSyCwZKvNHtNsjNO_aeXCdeFeXn4-YOM1xw8',
-  authDomain: 'facebook-clone-a72c0.firebaseapp.com',
-  projectId: 'facebook-clone-a72c0',
-  storageBucket: 'facebook-clone-a72c0.appspot.com',
-  messagingSenderId: '964855994482',
-  appId: '1:964855994482:web:e93ffafcc1bc961c524aeb',
-  measurementId: 'G-2DNZTHXNZ1',
-});
-
-const auth = firebase.auth();
-const firestore = firebase.firestore();
+import {
+  auth,
+  firebase,
+  firestore,
+  postsRef,
+  query,
+  useAuthState,
+  useCollectionData,
+  arrayUnion,
+  arrayRemove,
+  uniqid,
+  firebaseConfig,
+} from './components/Firebase';
 
 const RouteSwitch = () => {
-  const [state, setState] = useState({
-    username: 'Default-Username',
-  });
+  const [state, setState] = useState();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setState(user.displayName);
+    });
+  }, []);
+
+  const [user] = useAuthState(auth);
+  const [posts] = useCollectionData(query);
 
   const newPost = async (e) => {
     e.preventDefault();
     let documentId = uniqid();
     await postsRef.doc(documentId).set({
       id: documentId,
-      poster: state.username,
+      poster: state,
       post: e.target.childNodes[0].value,
       likes: [],
       comments: [],
@@ -78,7 +76,7 @@ const RouteSwitch = () => {
 
     await currentDoc.update({
       comments: arrayUnion({
-        commenter: state.username,
+        commenter: state,
         comment: e.target.childNodes[0].value,
       }),
     });
@@ -87,20 +85,16 @@ const RouteSwitch = () => {
     return;
   };
 
-  const changeUsername = (e) => {
+  const changeUsername = async (e) => {
     e.preventDefault();
-    setState({
-      username: e.target.childNodes[0].value,
-      posts: state.posts,
+    await auth.currentUser.updateProfile({
+      displayName: e.target.childNodes[0].value,
     });
+    setState(auth.currentUser.displayName);
+    console.log(auth.currentUser.displayName);
+
     e.target.childNodes[0].value = '';
   };
-
-  const [user] = useAuthState(auth);
-
-  const postsRef = firestore.collection('posts');
-  const query = postsRef.limit(25);
-  const [posts] = useCollectionData(query);
 
   return (
     <BrowserRouter>
@@ -110,7 +104,7 @@ const RouteSwitch = () => {
           element={
             user ? (
               <App
-                username={state.username}
+                username={state}
                 posts={posts}
                 newPost={newPost}
                 like={like}
@@ -126,10 +120,7 @@ const RouteSwitch = () => {
           path="/facebook-clone-react/ProfilePage"
           element={
             user ? (
-              <ProfilePage
-                username={state.username}
-                changeUsername={changeUsername}
-              />
+              <ProfilePage username={state} changeUsername={changeUsername} />
             ) : (
               <LogIn />
             )
