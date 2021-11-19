@@ -6,7 +6,7 @@ import RightHome from './components/RightHome';
 import LogIn from './components/LogIn';
 
 function App(props) {
-  const { username, posts, newPost, like, newComment } = props;
+  const { username, posts, newPost, like, newComment, checkLike } = props;
   return (
     <div className="App">
       <Navbar username={username} />
@@ -18,6 +18,7 @@ function App(props) {
           newPost={newPost}
           like={like}
           newComment={newComment}
+          checkLike={checkLike}
         />
         <RightHome />
       </div>

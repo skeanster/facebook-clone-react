@@ -6,7 +6,7 @@ import { ReactComponent as FeelingSvg } from './CenterHomeCompontents/feeling.sv
 import uniqid from 'uniqid';
 
 function CenterHome(props) {
-  const { username, posts, newPost, like, newComment } = props;
+  const { username, posts, newPost, like, newComment, checkLike } = props;
 
   const postsTwo = (a) => {
     if (a === undefined) {
@@ -121,7 +121,7 @@ function CenterHome(props) {
                 <div
                   className="interactionButton"
                   onClick={like}
-                  id={'liked' + post.liked}
+                  id={'liked' + checkLike(post)}
                 >
                   Like
                 </div>

@@ -11,6 +11,7 @@ import 'firebase/compat/analytics';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { arrayUnion, arrayRemove } from 'firebase/firestore';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 firebase.initializeApp({
   apiKey: 'AIzaSyCwZKvNHtNsjNO_aeXCdeFeXn4-YOM1xw8',
@@ -27,103 +28,33 @@ const firestore = firebase.firestore();
 
 const RouteSwitch = () => {
   const [state, setState] = useState({
-    username: 'user1001',
-    posts: [
-      {
-        id: uniqid(),
-        poster: 'John Smith',
-        post: 'Try changing your profile name, likeing a post, leaving a comment, or making a post of your own!',
-        likes: 3,
-        comments: [
-          {
-            commenter: 'Ryan Skeans',
-            comment: 'Try it!',
-          },
-        ],
-        liked: false,
-      },
-      {
-        id: uniqid(),
-        poster: 'Ryan Skeans',
-        post: 'Thank you for visiting my web app!',
-        likes: 2,
-        comments: [
-          {
-            commenter: 'John Smith',
-            comment: 'Fantastic! Looking good!',
-          },
-          {
-            commenter: 'Jane Doe',
-            comment: 'Love it!',
-          },
-        ],
-        liked: false,
-      },
-      {
-        id: uniqid(),
-        poster: 'Iron Man',
-        post: 'I love you 3000.',
-        likes: 278,
-        comments: [],
-        liked: false,
-      },
-      {
-        id: uniqid(),
-        poster: 'Hulk',
-        post: 'Smash!',
-        likes: 8,
-        comments: [],
-        liked: false,
-      },
-      {
-        id: uniqid(),
-        poster: 'Party Thor',
-        post: 'Has anybody seen Jane?',
-        likes: 6,
-        comments: [],
-        liked: false,
-      },
-      {
-        id: uniqid(),
-        poster: 'Wong',
-        post: 'It probably would have been a really fun wedding...',
-        likes: 2,
-        comments: [],
-        liked: false,
-      },
-    ],
+    username: 'Default-Username',
   });
 
   const newPost = async (e) => {
     e.preventDefault();
     let documentId = uniqid();
-    await testRef.doc(documentId).set({
+    await postsRef.doc(documentId).set({
       id: documentId,
       poster: state.username,
       post: e.target.childNodes[0].value,
-      likes: 0,
+      likes: [],
       comments: [],
-      liked: false,
     });
-
-    // setState({
-    //   username: state.username,
-    //   posts: [
-    //     {
-    //       id: uniqid(),
-    //       poster: state.username,
-    //       post: e.target.childNodes[0].value,
-    //       likes: 0,
-    //       comments: [],
-    //       liked: false,
-    //     },
-    //   ].concat(state.posts),
-    // });
     e.target.childNodes[0].value = '';
   };
 
+  const checkLike = (post) => {
+    let currentDoc = post;
+    if (currentDoc.likes.find((element) => element === user.uid)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   const like = async (like) => {
-    let currentDoc = await testRef.doc(like.target.parentNode.parentNode.id);
+    let currentDoc = await postsRef.doc(like.target.parentNode.parentNode.id);
     if (
       await (await currentDoc.get())
         .data()
@@ -132,68 +63,18 @@ const RouteSwitch = () => {
       await currentDoc.update({
         likes: firebase.firestore.FieldValue.arrayRemove(user.uid),
       });
+      return false;
     } else {
       await currentDoc.update({
         likes: arrayUnion(user.uid),
       });
+      return true;
     }
-
-    //if ((await currentDoc.get()).data().liked === false) {
-    //  await currentDoc.update({
-    //    liked: true,
-    //  });
-    //  await currentDoc.update({
-    //    likes: firebase.firestore.FieldValue.increment(1),
-    //  });
-    //  return;
-    //} else {
-    //  await currentDoc.update({
-    //    liked: false,
-    //  });
-    //  await currentDoc.update({
-    //    likes: firebase.firestore.FieldValue.increment(-1),
-    //  });
-    //}
-
-    //let postID = like.target.parentNode.parentNode.id;
-    //let itemExist = state.posts.find(({ id }) => id === postID);
-    //let indexOfItem = state.posts.indexOf(itemExist);
-    //let tempArray = [...state.posts];
-    //let tempItem = { ...tempArray[indexOfItem] };
-    //const postInQuestion = tempItem;
-    //
-    //if (postInQuestion.liked === false) {
-    //  tempItem.liked = true;
-    //  tempItem.likes = tempItem.likes + 1;
-    //  tempArray[indexOfItem] = tempItem;
-    //  setState({
-    //    username: state.username,
-    //    posts: tempArray,
-    //  });
-    //  return;
-    //} else {
-    //  tempItem.liked = false;
-    //  tempItem.likes = tempItem.likes - 1;
-    //  tempArray[indexOfItem] = tempItem;
-    //  setState({
-    //    username: state.username,
-    //    posts: tempArray,
-    //  });
-    //  return;
-    //}
   };
 
   const newComment = async (e) => {
     e.preventDefault();
-    let currentDoc = await testRef.doc(e.target.parentNode.parentNode.id);
-    //await currentDoc.update({
-    //  id: e.target.parentNode.parentNode.id,
-    //  liked: true,
-    //  likes: 6,
-    //  post: 'worked',
-    //  poster: 'really worked',
-    //  comments: [],
-    //});
+    let currentDoc = await postsRef.doc(e.target.parentNode.parentNode.id);
 
     await currentDoc.update({
       comments: arrayUnion({
@@ -202,20 +83,6 @@ const RouteSwitch = () => {
       }),
     });
 
-    // let postID = e.target.parentNode.parentNode.id;
-    // let itemExist = state.posts.find(({ id }) => id === postID);
-    // let indexOfItem = state.posts.indexOf(itemExist);
-    // let tempArray = [...state.posts];
-    // let tempItem = { ...tempArray[indexOfItem] };
-    // tempItem.comments = tempItem.comments.concat({
-    //   commenter: state.username,
-    //   comment: e.target.childNodes[0].value,
-    // });
-    // tempArray[indexOfItem] = tempItem;
-    // setState({
-    //   username: state.username,
-    //   posts: tempArray,
-    // });
     e.target.childNodes[0].value = '';
     return;
   };
@@ -231,9 +98,9 @@ const RouteSwitch = () => {
 
   const [user] = useAuthState(auth);
 
-  const testRef = firestore.collection('posts');
-  const query = testRef.limit(25);
-  const [tests] = useCollectionData(query);
+  const postsRef = firestore.collection('posts');
+  const query = postsRef.limit(25);
+  const [posts] = useCollectionData(query);
 
   return (
     <BrowserRouter>
@@ -244,10 +111,11 @@ const RouteSwitch = () => {
             user ? (
               <App
                 username={state.username}
-                posts={tests}
+                posts={posts}
                 newPost={newPost}
                 like={like}
                 newComment={newComment}
+                checkLike={checkLike}
               />
             ) : (
               <LogIn />
