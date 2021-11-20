@@ -49,18 +49,34 @@ const Navbar = (props) => {
           <img src={ProfilePic} alt="profile pic" className="ProfileImage" />
           <div className="profileName">{username}</div>
         </Link>
-        <div className="navbarRightLinks" id="navbarMenu">
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="navbarRightLinks"
+          id="navbarMenu"
+        >
           <DotsSvg />
-        </div>
-        <div className="navbarRightLinks" id="navbarMessenger">
+        </Link>
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="navbarRightLinks"
+          id="navbarMessenger"
+        >
           <MessengerSvg />
-        </div>
-        <div className="navbarRightLinks" id="navbarNotifications">
+        </Link>
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="navbarRightLinks"
+          id="navbarNotifications"
+        >
           <NotificationsSvg />
-        </div>
-        <div className="navbarRightLinks" id="navbarExpand">
+        </Link>
+        <Link
+          to="/facebook-clone-react/ProfilePage"
+          className="navbarRightLinks"
+          id="navbarExpand"
+        >
           <ArrowSvg />
-        </div>
+        </Link>
       </div>
     </div>
   );
