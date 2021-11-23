@@ -1,6 +1,6 @@
 # My Facebook Clone
 
-Check it out: [Live Demo](https://skeanster.github.io/facebook-clone-react/)
+Check it out: [Live Demo](https://skeanster.github.io/facebook-clone-react/) :point_left:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
