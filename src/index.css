@@ -1,4 +1,5 @@
 body {
+  transition: all 0.3s ease;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -45,6 +46,7 @@ a:hover {
 }
 
 .formContainer {
+  transition: all 0.5s ease;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -57,7 +59,6 @@ a:hover {
   border-radius: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-  animation: 0.3s ease 0s 1 normal none running fadeIn;
 }
 
 #postInput {
@@ -291,6 +292,7 @@ a:hover {
 }
 
 .centerHomeContainer {
+  transition: all 0.5s ease;
   display: flex;
   width: 90%;
   max-width: 680px;
@@ -369,6 +371,7 @@ a:hover {
   background-color: white;
   border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transition: all 0.5s ease;
 }
 
 .posterName {
@@ -448,10 +451,12 @@ a:hover {
 }
 
 .commentsContainer {
+  transition: all 0.5s ease;
   width: 100%;
 }
 
 .singleComment {
+  transition: all 0.5s ease;
   width: max-content;
   max-width: 96%;
   padding-left: 12px;
@@ -531,13 +536,13 @@ a:hover {
 }
 
 .signOut {
+  transition: all 0.5s ease;
   background: white;
   z-index: 15;
   width: 100%;
   padding: 9px;
   margin-top: 15px;
   border-radius: 10px;
-  animation: 0.3s ease 0s 1 normal none running fadeIn;
   border: 2px solid #1877f2;
   color: #1877f2;
   font-weight: 700;

@@ -92,7 +92,6 @@ const RouteSwitch = () => {
       displayName: e.target.childNodes[0].value,
     });
     setState(auth.currentUser.displayName);
-    console.log(auth.currentUser.displayName);
 
     e.target.childNodes[0].value = '';
   };
