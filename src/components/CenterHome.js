@@ -40,6 +40,8 @@ function CenterHome(props) {
   const activateOverlay = () => {
     document.querySelector('.overlay').classList.toggle('activeOverlay');
     document.querySelector('.formContainer').classList.toggle('hide');
+    document.getElementById('postInput').focus();
+    document.getElementById('postInput').select();
   };
 
   const newPostSubmit = (e) => {
