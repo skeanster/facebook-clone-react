@@ -45,7 +45,6 @@ function CenterHome(props) {
   };
 
   const newPostSubmit = (e) => {
-    //newPost(document.querySelector('#postInput').value);
     newPost(e);
     document.querySelector('.overlay').classList.toggle('activeOverlay');
     document.querySelector('.formContainer').classList.toggle('hide');

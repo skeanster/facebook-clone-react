@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import LeftHome from './components/LeftHome';
 import CenterHome from './components/CenterHome';
 import RightHome from './components/RightHome';
+import InfoButton from './components/infoButton';
 
 function App(props) {
   const { username, posts, newPost, like, newComment, checkLike } = props;
@@ -21,6 +22,7 @@ function App(props) {
         />
         <RightHome />
       </div>
+      <InfoButton />
     </div>
   );
 }

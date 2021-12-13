@@ -31,7 +31,7 @@ const firebaseConfig = {
 const auth = firebase.auth();
 const firestore = firebase.firestore();
 const postsRef = firestore.collection('posts');
-const query = postsRef.limit(25);
+const query = postsRef;
 
 const googleProvider = new firebase.auth.GoogleAuthProvider();
 
