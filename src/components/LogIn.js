@@ -5,7 +5,7 @@ function LogIn() {
   return (
     <div className="loginContainer">
       <img
-        src="https://static.xx.fbcdn.net/rsrc.php/y8/r/dF5SId3UHWd.svg"
+        src="https://upload.wikimedia.org/wikipedia/commons/9/93/Facebook_logo_%282023%29.svg"
         className="loginLogo"
         alt="facebook"
       />
