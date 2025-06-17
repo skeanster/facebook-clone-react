@@ -1,653 +1,657 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  transition: all 0.3s ease;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #1c1e21;
-  background-color: #f0f2f5;
+    transition: all 0.3s ease;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1c1e21;
+    background-color: #f0f2f5;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 a {
-  text-decoration: none;
-  color: #1c1e21;
+    text-decoration: none;
+    color: #1c1e21;
 }
 
 a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
 
 .overlay {
-  z-index: 9;
-  position: fixed;
-  opacity: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background-color: rgb(238, 238, 238);
+    z-index: 9;
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-color: rgb(238, 238, 238);
 }
 
 .activeOverlay {
-  opacity: 0.75;
-  pointer-events: all;
+    opacity: 0.75;
+    pointer-events: all;
 }
 
 .hide {
-  display: none;
+    display: none;
 }
 
 .formContainer {
-  transition: all 0.5s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: white;
-  z-index: 15;
-  width: 80%;
-  max-width: 468px;
-  padding: 16px;
-  border-radius: 10px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    transition: all 0.5s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    z-index: 15;
+    width: 80%;
+    max-width: 468px;
+    padding: 16px;
+    border-radius: 10px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+        rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 #postInput {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  border: none;
-  font-size: 24px;
-  font-weight: 400;
-  overflow-wrap: break-word;
-  width: calc(100% - 22px);
-  max-width: 446px;
-  height: 75px;
-  white-space: pre-wrap;
-  padding: 9px;
-  border: 2px solid #1877f2;
-  border-top-right-radius: 8px;
-  border-top-left-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    border: none;
+    font-size: 24px;
+    font-weight: 400;
+    overflow-wrap: break-word;
+    width: calc(100% - 22px);
+    max-width: 446px;
+    height: 75px;
+    white-space: pre-wrap;
+    padding: 9px;
+    border: 2px solid #1877f2;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
 }
 
 #postSubmit {
-  color: white;
-  background-color: #1877f2;
-  text-align: center;
-  width: 100%;
-  max-width: 468px;
-  border: none;
-  border-radius: 8px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  font-size: 15px;
-  font-weight: 600;
-  padding: 9px;
-  cursor: pointer;
-  border: 2px solid #1877f2;
+    color: white;
+    background-color: #1877f2;
+    text-align: center;
+    width: 100%;
+    max-width: 468px;
+    border: none;
+    border-radius: 8px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 9px;
+    cursor: pointer;
+    border: 2px solid #1877f2;
 }
 
 @media only screen and (max-width: 1310px) {
-  .leftHomeContainer {
-    display: none;
-  }
-  .searchbar {
-    display: none;
-  }
-  #navbarProfileLink {
-    display: none;
-  }
-  #centerHomeContainer {
-    margin-left: 0;
-    margin-right: auto;
-  }
+    .leftHomeContainer {
+        display: none;
+    }
+    .searchbar {
+        display: none;
+    }
+    #navbarProfileLink {
+        display: none;
+    }
+    #centerHomeContainer {
+        margin-left: 0;
+        margin-right: auto;
+    }
 }
 
 @media only screen and (max-width: 1050px) {
-  .rightHomeContainer {
-    display: none;
-  }
-  #centerHomeContainer {
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 30px;
-  }
+    .rightHomeContainer {
+        display: none;
+    }
+    #centerHomeContainer {
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 30px;
+    }
 }
 
 @media only screen and (max-width: 775px) {
-  #navbarCenterContainer {
-    display: none;
-  }
-  #feeling {
-    display: none;
-  }
+    #navbarCenterContainer {
+        display: none;
+    }
+    #feeling {
+        display: none;
+    }
 }
 
 .navbarContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  height: 56px;
-  padding-left: 16px;
-  padding-right: 16px;
-  width: calc(100% - 32px);
-  position: fixed;
-  top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    height: 56px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: calc(100% - 32px);
+    position: fixed;
+    top: 0;
 }
 
 .searchbar {
-  position: relative;
+    position: relative;
 }
 
 .searchSvg {
-  position: absolute;
-  top: 12px;
-  left: 12px;
+    position: absolute;
+    top: 12px;
+    left: 12px;
 }
 
 .searchInput {
-  width: 240px;
-  height: 40px;
-  padding-left: 36px;
-  padding-top: 7px;
-  padding-right: 16px;
-  padding-bottom: 9px;
-  border: none;
-  border-radius: 25px;
-  background-color: rgb(237, 240, 245);
+    width: 240px;
+    height: 40px;
+    padding-left: 36px;
+    padding-top: 7px;
+    padding-right: 16px;
+    padding-bottom: 9px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgb(237, 240, 245);
 }
 
 .navbarCenterContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  height: 80%;
-  gap: 12px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 80%;
+    gap: 12px;
 }
 
 .navbarCenterIcons {
-  height: 100%;
-  max-width: 120px;
-  width: calc(70px + 3vmax);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 100%;
+    max-width: 120px;
+    width: calc(70px + 3vmax);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navbarCenterIcons:hover {
-  background-color: rgba(228, 228, 228, 0.671);
+    background-color: rgba(228, 228, 228, 0.671);
 }
 
 .navbarRightContainer {
-  height: 60%;
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 10px;
-  align-items: center;
-  justify-content: flex-end;
+    height: 60%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .navbarLeftContainer {
-  width: 30%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  gap: 8px;
-  height: 100%;
-  align-items: center;
-  justify-content: flex-start;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 8px;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .navbarProfileLink {
-  color: #1c1e21;
-  text-decoration: none;
-  display: flex;
-  gap: 5px;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
-  padding: 3px;
-  border-radius: 50px;
+    color: #1c1e21;
+    text-decoration: none;
+    display: flex;
+    gap: 5px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+    border-radius: 50px;
 }
 
 .navbarProfileLink:hover {
-  background-color: rgba(228, 228, 228, 0.671);
+    background-color: rgba(228, 228, 228, 0.671);
 }
 
 .navbarRightLinks {
-  background-color: rgb(231, 231, 231);
-  padding: 10px;
-  border-radius: 50%;
+    background-color: rgb(231, 231, 231);
+    padding: 10px;
+    border-radius: 50%;
 }
 
 .navbarRightLinks:hover {
-  background-color: rgb(219, 219, 219);
+    background-color: rgb(219, 219, 219);
 }
 
 .ProfileImage {
-  width: 30px;
-  padding-left: 5px;
-  padding-bottom: 7px;
-  padding-right: 8px;
+    width: 30px;
+    padding-left: 5px;
+    padding-bottom: 7px;
+    padding-right: 8px;
 }
 
 .homeMainContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
 }
 
 .leftHomeContainer {
-  width: 300px;
-  position: fixed;
-  top: 50px;
+    width: 300px;
+    position: fixed;
+    top: 50px;
 }
 
 .leftHomeList {
-  padding-left: 16px;
+    padding-left: 16px;
 }
 
 .leftHomeListItem {
-  width: 100%;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  border-radius: 8px;
-  cursor: pointer;
-  text-decoration: none;
+    width: 100%;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .leftHomeListItem:hover {
-  background-color: rgba(228, 228, 228, 0.671);
+    background-color: rgba(228, 228, 228, 0.671);
 }
 
 .leftHomeImage {
-  width: 36px;
-  padding-left: 5px;
-  padding-bottom: 7px;
-  padding-right: 8px;
+    width: 36px;
+    padding-left: 5px;
+    padding-bottom: 7px;
+    padding-right: 8px;
 }
 
 .leftHomeText {
-  width: 100%;
-  color: #1c1e21;
+    width: 100%;
+    color: #1c1e21;
 }
 
 .centerHomeContainer {
-  transition: all 0.5s ease;
-  display: flex;
-  width: 90%;
-  max-width: 680px;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 20px;
-  padding: 32px;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 50px;
+    transition: all 0.5s ease;
+    display: flex;
+    width: 90%;
+    max-width: 680px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 20px;
+    padding: 32px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
 }
 
 .newPostContainer {
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  padding-bottom: 10px;
-  width: 100%;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    padding-bottom: 10px;
+    width: 100%;
 }
 
 .newPostMainContainer {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  padding: 16px;
-  padding-bottom: 0px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 16px;
+    padding-bottom: 0px;
 }
 
 .mainNewPostButton {
-  width: 100%;
-  padding: 12px;
-  width: 580px;
-  background-color: rgba(228, 228, 228, 0.671);
-  border-radius: 20px;
-  cursor: pointer;
+    width: 100%;
+    padding: 12px;
+    width: 580px;
+    background-color: rgba(228, 228, 228, 0.671);
+    border-radius: 20px;
+    cursor: pointer;
 }
 
 .mainNewPostButton:hover {
-  background-color: #e7e7e7;
+    background-color: #e7e7e7;
 }
 
 .postOptionsButtons {
-  display: flex;
-  padding-top: 8px;
-  margin-top: 12px;
-  border-top: 1px solid rgb(228, 230, 235);
-  margin-left: 18px;
-  margin-right: 18px;
+    display: flex;
+    padding-top: 8px;
+    margin-top: 12px;
+    border-top: 1px solid rgb(228, 230, 235);
+    margin-left: 18px;
+    margin-right: 18px;
 }
 
 .postOptionsText {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 .postOptionButton {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: center;
-  padding: 8px;
-  cursor: pointer;
-  border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 8px;
 }
 
 .postOptionButton:hover {
-  background-color: rgba(240, 238, 238, 0.795);
+    background-color: rgba(240, 238, 238, 0.795);
 }
 
 .postContainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  width: 100%;
-  align-items: center;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 100%;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    transition: all 0.5s ease;
 }
 
 .posterName {
-  width: calc(100% - 32px);
-  padding-top: 16px;
-  padding-bottom: 16px;
-  margin-bottom: 16px;
-  border-bottom: 1px solid rgb(228, 230, 235);
+    width: calc(100% - 32px);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgb(228, 230, 235);
 }
 
 .postText {
-  width: calc(100% - 32px);
-  padding-bottom: 16px;
+    width: calc(100% - 32px);
+    padding-bottom: 16px;
 }
 
 .likeInfoContainer {
-  width: calc(100% - 32px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 10px;
-  margin-bottom: 5px;
-  border-bottom: 1px solid rgb(228, 230, 235);
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    border-bottom: 1px solid rgb(228, 230, 235);
 }
 
 .likeTotalContainer {
-  display: flex;
+    display: flex;
 }
 
 .likeTotal {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 
 .interactionsContainer {
-  width: calc(100% - 32px);
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 5px;
-  padding-top: 0;
-  text-align: center;
+    width: calc(100% - 32px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px;
+    padding-top: 0;
+    text-align: center;
 }
 
 .interactionButton {
-  border-radius: 8px;
-  width: 195px;
-  padding: 10px;
-  cursor: pointer;
+    border-radius: 8px;
+    width: 195px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .interactionButton:hover {
-  background-color: rgba(229, 226, 226, 0.692);
+    background-color: rgba(229, 226, 226, 0.692);
 }
 
 #likedtrue {
-  background-color: #1877f2;
-  color: white;
+    background-color: #1877f2;
+    color: white;
 }
 
 .commentSectionContainer {
-  width: calc(100% - 32px);
-  padding-top: 16px;
-  border-top: 1px solid rgb(228, 230, 235);
+    width: calc(100% - 32px);
+    padding-top: 16px;
+    border-top: 1px solid rgb(228, 230, 235);
 }
 
 .newCommentContainer {
-  width: 96%;
-  border: none;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: rgb(230, 233, 236);
-  border-radius: 18px;
+    width: 96%;
+    border: none;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(230, 233, 236);
+    border-radius: 18px;
 }
 
 .commentsContainer {
-  transition: all 0.5s ease;
-  width: 100%;
+    transition: all 0.5s ease;
+    width: 100%;
 }
 
 .singleComment {
-  transition: all 0.5s ease;
-  width: max-content;
-  max-width: 96%;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: rgb(240, 242, 245);
-  border-radius: 18px;
+    transition: all 0.5s ease;
+    width: max-content;
+    max-width: 96%;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(240, 242, 245);
+    border-radius: 18px;
 }
 
 .commenter {
-  font-size: 13px;
-  font-weight: 600;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .comment {
-  font-size: 15px;
-  font-weight: 400;
+    font-size: 15px;
+    font-weight: 400;
 }
 
 .rightHomeContainer {
-  width: 300px;
-  padding-top: 16px;
-  position: fixed;
-  top: 50px;
-  right: 0px;
+    width: 300px;
+    padding-top: 16px;
+    position: fixed;
+    top: 50px;
+    right: 0px;
 }
 
 .sponsoredContainer {
-  padding: 16px;
-  padding-left: 0;
-  border-bottom: 1px solid rgb(228, 230, 235);
-  font-weight: 600;
+    padding: 16px;
+    padding-left: 0;
+    border-bottom: 1px solid rgb(228, 230, 235);
+    font-weight: 600;
 }
 
 .contactsContainer {
-  margin-right: 25px;
-  padding-top: 16px;
-  border-bottom: 1px solid rgb(228, 230, 235);
+    margin-right: 25px;
+    padding-top: 16px;
+    border-bottom: 1px solid rgb(228, 230, 235);
 }
 
 .contactsHeader {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .contactsList {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 .contactRight {
-  display: flex;
-  align-items: center;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border-radius: 8px;
-  cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 8px;
+    cursor: pointer;
 }
 
 .contactRight:hover {
-  background-color: rgba(229, 226, 226, 0.692);
+    background-color: rgba(229, 226, 226, 0.692);
 }
 
 .contactName {
-  width: 100%;
+    width: 100%;
 }
 
 .groupConvosHeader {
-  padding: 16px;
-  padding-left: 0;
-  font-weight: 600;
+    padding: 16px;
+    padding-left: 0;
+    font-weight: 600;
 }
 
 .newGroupText {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .signOut {
-  transition: all 0.5s ease;
-  background: white;
-  z-index: 15;
-  width: 100%;
-  padding: 9px;
-  margin-top: 15px;
-  border-radius: 10px;
-  border: 2px solid #1877f2;
-  color: #1877f2;
-  font-weight: 700;
-  cursor: pointer;
+    transition: all 0.5s ease;
+    background: white;
+    z-index: 15;
+    width: 100%;
+    padding: 9px;
+    margin-top: 15px;
+    border-radius: 10px;
+    border: 2px solid #1877f2;
+    color: #1877f2;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .signOut:hover {
-  background-color: #1877f2;
-  color: white;
+    background-color: #1877f2;
+    color: white;
 }
 
 .loginContainer {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: center;
-  align-items: center;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
 }
 
 .loginLogo {
-  max-width: 800px;
-  padding-top: 13%;
-  padding-bottom: 50px
+    max-width: 800px;
+    padding-top: 13%;
+    padding-bottom: 50px;
 }
 
 .sign-in {
-  line-height: 40px;
-  background-color: white;
-  border: 2px solid #1877f2;
-  border-radius: 10px;
-  color: #1877f2;
-  padding: 5px 20px 5px 20px;
-  font-weight: 600;
-  font-size: calc(10px + 2vmin);
-  margin-bottom: 20px;
-  cursor: pointer;
+    line-height: 40px;
+    background-color: white;
+    border: 2px solid #1877f2;
+    border-radius: 10px;
+    color: #1877f2;
+    padding: 5px 20px 5px 20px;
+    font-weight: 600;
+    font-size: calc(10px + 2vmin);
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .sign-in:hover {
-  background-color: #1877f2;
-  color: white;
+    background-color: #1877f2;
+    color: white;
 }
 
 .login-links {
-  padding-top: 50px;
-  color: #1c1e21;
+    padding-top: 50px;
+    color: #1c1e21;
 }
 
 .infoButtonContainer {
-  transition: all 0.3s ease;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  background: #1877f2;
-  border-radius: 50%;
-  box-shadow: 0 0 10px 3px rgb(0 0 0 / 30%);
-  padding: 5px;
-  cursor: pointer;
-  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97);
-  animation-iteration-count: 2;
-  animation-delay: 1.5s;
+    transition: all 0.3s ease;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #1877f2;
+    border-radius: 50%;
+    box-shadow: 0 0 10px 3px rgb(0 0 0 / 30%);
+    padding: 5px;
+    cursor: pointer;
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97);
+    animation-iteration-count: 2;
+    animation-delay: 1.5s;
 }
 
 @keyframes shake {
-  10%,
-  90% {
-    transform: translate3d(-1px, 0, 0);
-  }
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
 
-  20%,
-  80% {
-    transform: translate3d(2px, 0, 0);
-  }
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
 
-  30%,
-  50%,
-  70% {
-    transform: translate3d(-4px, 0, 0);
-  }
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
 
-  40%,
-  60% {
-    transform: translate3d(4px, 0, 0);
-  }
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
 }
 
 .infoHide {
-  transition: opacity 0.3s linear;
-  opacity: 0;
+    transition: opacity 0.3s linear;
+    opacity: 0;
 }
 
 #infoPopout {
-  position: fixed;
-  right: 15px;
-  bottom: 90px;
-  background: white;
-  border: 2px solid black;
-  padding: 10px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px 3px rgb(0 0 0 / 30%);
-  width: 200px;
-  cursor: default;
-  transition: all 0.3s ease;
+    position: fixed;
+    right: 15px;
+    bottom: 90px;
+    background: white;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 3px rgb(0 0 0 / 30%);
+    width: 200px;
+    cursor: default;
+    transition: all 0.3s ease;
 }
