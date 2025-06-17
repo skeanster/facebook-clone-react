@@ -248,7 +248,7 @@ a:hover {
 .ProfileImage {
     width: 30px;
     padding-left: 5px;
-    padding-bottom: 7px;
+    padding-bottom: 4px;
     padding-right: 8px;
 }
 
@@ -655,4 +655,19 @@ a:hover {
     width: 200px;
     cursor: default;
     transition: all 0.3s ease;
+}
+
+.profileName {
+    padding-right: 8px;
+}
+
+.arrow-svg {
+    transform: scale(1.7);
+}
+
+.active-nav {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 2px solid #1877f2;
+    fill: #1877f2;
 }
