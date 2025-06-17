@@ -73,7 +73,7 @@ a:hover {
     font-size: 24px;
     font-weight: 400;
     overflow-wrap: break-word;
-    width: calc(100% - 22px);
+    width: 100%;
     max-width: 446px;
     height: 75px;
     white-space: pre-wrap;
@@ -148,7 +148,7 @@ a:hover {
     height: 56px;
     padding-left: 16px;
     padding-right: 16px;
-    width: calc(100% - 32px);
+    width: 100%;
     position: fixed;
     top: 0;
 }
@@ -493,6 +493,7 @@ a:hover {
 
 .sponsoredContainer {
     padding: 16px;
+    margin-right: 16px;
     padding-left: 0;
     border-bottom: 1px solid rgb(228, 230, 235);
     font-weight: 600;
